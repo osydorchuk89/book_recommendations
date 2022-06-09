@@ -1,0 +1,3 @@
+# Building book recommendation system
+
+In this project, I will build a book recommendation system using collaborative filtering. More info to come soon...
