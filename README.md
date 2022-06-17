@@ -1,6 +1,6 @@
 # Book recommendation system
 
-In this project, I built a book recommendation system using collaborative filtering. The project is based on the [video](https://www.youtube.com/watch?v=mrWzQy_Lddc) by Vik Paruchuri, founder of Dataquest. I followed the general guidelines suggested in the video, but also added some changes that I hope made the workflow more robust and the recommendations more relevant. I also used an item-based collaborative filtering approach, aside from the user-based one from the video.
+In this project, I built a book recommendation system using collaborative filtering. The project is based on the [video](https://www.youtube.com/watch?v=mrWzQy_Lddc) by Vik Paruchuri, founder of Dataquest. I followed the general guidelines suggested in the video, but also added some changes that I hope made the workflow more robust and the recommendations more relevant. Aside from the memory-based approach to collaborative filtering using similarities between users, I also user a memory-based approach using similarities between books and a model-based approach using matrix factorization.
 
 ## Data
 
@@ -17,17 +17,16 @@ I implemented the project in several steps:
 1. Collected, analyzed, and organized the data about the books available on Goodreads.
 2. Got the information about books that I read or would like to read from my Goodreads account.
 3. Selected users with some degree of overlapping interest in books that I read or intent to read.
-4. Implemented user-based approach to producing recommendations:
+4. Implemented memory-based approach according to similary between users:
     - among the selected users, identified top 15 users that are most similar to my reading preferences;
     - selected the books with the highest average ratings and the highest number of ratings by the users most similar to me;
     - removed the books that I have already read or that are on my to-read list.
-4. Implemented item-based approach to producing recommendations:
+5. Implemented memory-based approach according to similary between items:
     - selected the books that I liked and found top three most similar books to each of them;
     - removed the books that I have already read or that are on my to-read list.
+6. Implemented model-based approach by using matrix factorization algorithms:
+    - iterated over possible hyperparameter combinations and identified the best ones;
+    - fitted the algorithm to the dataset and predicted ratings I would give to various books;
+    - selected the books with the highest predicted ratings.
 
-As a result, I got the books that were recommended to me.
-
-
-## Next steps
-
-I will use Surprise library to experiment with machine learning algorithms and build a model after evaluating its performance. 
+As a result, I got the books that were recommended to me. 
